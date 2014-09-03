@@ -2,14 +2,9 @@
 <div class = "container-fluid">
   <h1><%= @recipe.name %></h1>
 
-<div class="row">
-  <% if @recipe.name == "Chilled Monkey Brains" %>
-    <img src="http://shirtoid.com/wp-content/uploads/2011/04/chilled-monkey-brains.jpg" width=200 height=200>
-  <% end %>
-</div>
 
   <div class = "row">
-    <h2>Recipe Directions</h2>
+    <h3>Recipe Directions</h3>
     <p><%= @recipe.description %></p>
   </div>
   <div class = "row">
@@ -24,6 +19,16 @@
       </a>
     </div>
   </div>
+
+  <div class ="row">
+    <h3>Tags</h3>
+    <ul>
+      <% @recipe.tags.each do |tag| %>
+        <li><%= tag.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
   <br>
   <a href="/recipes">Recipe List</a>
 
