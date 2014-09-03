@@ -5,7 +5,6 @@
 
   <%= render("/layouts/tag_list") %>
 
-
   <div class = "row">
     <h3>Input a new tag</h3>
     <form action="/tags" method="post">
@@ -17,5 +16,7 @@
   <div id = "error_box" class = "row">
     <%= render('/layouts/errors', :object => @tag) %>
   </div>
+
+  <a href="/recipes/"><button class="btn btn-primary">Recipe Home</button></a>
 
 </div>

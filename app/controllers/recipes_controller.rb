@@ -4,7 +4,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipes = Recipe.all
     @tags = Tag.all
-    render("recipes/index.html.erb")
   end
 
   def create
@@ -12,9 +11,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(params[:recipe])
     if @recipe.save
       flash[:notice] = "Created Successfully."
-      redirect_to("/recipes")
+      redirect_to recipes_path
     else
-      render("recipes/index.html.erb")
+      render "index"
     end
   end
 
@@ -22,14 +21,12 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     @tags = Tag.all
     @recipe = Recipe.find(params[:id])
-    render("recipes/show.html.erb")
   end
 
   def edit
     @recipes = Recipe.all
     @tags = Tag.all
     @recipe = Recipe.find(params[:id])
-    render("recipes/edit.html.erb")
   end
 
   def update
@@ -37,9 +34,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if @recipe.update(params[:recipe])
       flash[:notice] = "Updated Successfully."
-      redirect_to("/recipes/#{@recipe.id}")
+      redirect_to recipes_path(@recipe)
     else
-      render("recipes/edit.html.erb")
+      render "edit"
     end
   end
 
@@ -47,7 +44,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe.delete
     flash[:notice] = "Removed Successfully."
-    redirect_to('/recipes')
+    redirect_to recipes_path
   end
 
 end
