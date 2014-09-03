@@ -1,0 +1,10 @@
+<div class = "row all_list">
+  <h3>All tags:</h3>
+  <div class = "tag_list">
+    <% @tags.each do |tag| %>
+      <div class = "tags_back">
+        <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -54,6 +54,10 @@ h3 {
   background: #eee;
 }
 
+.all_list li {
+  margin-bottom:3px;
+}
+
 .tags_list {
   padding-bottom: 20px;
 }
@@ -62,6 +66,7 @@ h3 {
   padding: 5px;
   float: left;
   margin: 2px;
+  background: white;
   border-radius: 3px;
   margin-left: 5px;
   border:1px solid #6699FF;
@@ -80,4 +85,5 @@ h3 {
 .glyphicon {
   color: green;
   margin-right: 2px;
+  margin-left: 10px;
 }

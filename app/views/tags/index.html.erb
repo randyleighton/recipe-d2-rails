@@ -3,14 +3,8 @@
 <div class = "container-fluid">
   <h1>Tags</h1>
 
-  <div class = "row">
-    <h3>All tags</h3>
-    <ul>
-      <% @tags.each do |tag| %>
-        <li><p><a href="/tags/<%= tag.id %>"><%= tag.name %></a></p></li>
-      <% end %>
-    </ul>
-  </div>
+  <%= render("/layouts/tag_list") %>
+
 
   <div class = "row">
     <h3>Input a new tag</h3>
