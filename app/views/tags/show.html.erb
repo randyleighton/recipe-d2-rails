@@ -1,3 +1,4 @@
+<% content_for(:title, "#{@tag.name} | Tags" ) %>
 
 <div class = "container-fluid">
   <h1><%= @tag.name %></h1>
@@ -21,12 +22,7 @@
       <a href='/recipes/<%= recipe.id %>'><span class = "glyphicon glyphicon-cutlery"> </span> <%= recipe.name %></a>
     <% end %>
   </div>
-
   <br>
+
   <a href="/tags">Tag List</a>
-
 </div>
-
-
-<!-- glyphicon glyphicon-tag -->
-<!-- glyphicon glyphicon-cutlery -->
