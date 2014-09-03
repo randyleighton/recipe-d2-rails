@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   match('tags/:id', {via: [:patch, :put], to: 'tags#update' })
   match('tags/:id', {via: :delete, to: 'tags#delete' })
 
-  match('recipes/:id/tags'), {:via :post, to: 'recipes_tags#create'})
-  match('recipes/:id/tags/:tag_id'), {:via :delete, to: 'recipes_tags#delete'})
+  match('recipes/:id/tags', {via: :post, to: 'recipestags#create'})
+  match('recipes/:id/tags/:tag_id', {via: :delete, to: 'recipestags#delete'})
 end
