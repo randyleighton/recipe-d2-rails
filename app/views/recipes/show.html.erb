@@ -10,14 +10,10 @@
   </div>
   <div class = "row">
     <div class ="col-xs-2">
-      <a href="/recipes/<%= @recipe.id %>/edit">
-        <span class="glyphicon glyphicon-pencil"></span> Edit Recipe
-      </a>
+      <p><%= link_to "Edit Recipe", edit_recipe_path(@recipe), :class =>"glyphicon glyphicon-pencil" %></p>
     </div>
     <div class ="col-xs-3">
-      <a href="/recipes/<%= @recipe.id %>" rel="nofollow" data-method="delete" data-confirm="Really, please don't? ">
-        <span class="glyphicon glyphicon-trash"></span> Delete Recipe
-      </a>
+      <p><%= link_to "Delete", recipe_path(@recipe), :class => "glyphicon glyphicon-trash", :data => {:confirm => "Are you certain?", :method => "delete"} %></p>
     </div>
   </div>
 
@@ -29,12 +25,8 @@
           rel="nofollow" data-method="delete" data-confirm="Really, please don't? ">
           <span class="glyphicon glyphicon-trash"></span></a></li>
       <% end %>
-    <br>
-    <span class="glyphicon glyphicon-trash"></span> = Click to remove a tag
+      <br>
+      <span class="glyphicon glyphicon-trash"></span> = Click to remove a tag
     </ul>
   </div>
-
-  <br>
-  <a href="/recipes"><button class="btn btn-primary">Recipe List</button></a>
-
 </div>
