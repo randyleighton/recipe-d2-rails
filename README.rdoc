@@ -1,28 +1,45 @@
-== README
+=Recipes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+==authored by Randy Leighton and Jeremy Whitaker
 
-Things you may want to cover:
+This is a Ruby rails project created to manage recipes. This uses a many to many relationship with tables recipes and tags.
 
-* Ruby version
+---
+To run this locally:
+$ git clone https://github.com/randyleighton/recipes-d2-rails.git
+$ rake db:create
+$ rake db:migrate
+$ rails server
+Web Browser Address => http://localhost:3000/
+---
+* Created in Ruby 2.0.0, Rails 4.1.5
+* Utilizes Bundle gem to manage gem dependencies
+* Database utilized: PostgreSQL
+* Database names: recipes_development, recipes_test
+* Testing utilizes Rails helper, rspec 3.0.4, and rspec-rails 3.0.2
+  (if gem versions are lower than these try to use "bundle update")
+---
+There are many criteria this project will focus on:
+* Routes are created to utilize RESTful format.
+* There is a route for the homepage.
+* Render and redirecting are being utilized in the controller with flash messages.
+* Application logic in the models, and controllers do as little work as possible.
+* Parameters are utilizing the better parameters nesting format. The movie controller is using the params[:movie] format.
+* Forms display errors correctly, including partials.
+* Flash message is in place for new record creation, record updating, and deleting. These use bootstrap in the application.html.erb to utilize alerts.
+* Reused code for error checking and forms is refactored into partials.
+* App utilizes the asset pipeline for CSS. Bootstrap is setup and configured to run. The app/assets/stylesheets/application.css.scss file is renamed and contains css.
+---
+table "recipes"
+  t.string "name"
+  t.string "description"
 
-* System dependencies
+table "recipes_tags"
+  t.integer "recipe_id"
+  t.integer "tag_id"
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+table "tags"
+  t.string   "name"
+  t.datetime "created_at"
+  t.datetime "updated_at"
+---
