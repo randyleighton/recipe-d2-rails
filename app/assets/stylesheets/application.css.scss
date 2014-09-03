@@ -24,7 +24,14 @@ p {
   font-size: 16px;
 }
 
-.input_lg
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  padding-left: 10px;
+}
 
 #error_box {
   display: none;
@@ -41,8 +48,32 @@ p {
 }
 
 .all_list {
+  margin-top: 10px;
   border: 2px solid grey;
   border-radius: 5px;
-  background: lightblue;
+  background: #eee;
 }
 
+.tags_list {
+  padding-bottom: 20px;
+}
+
+.tags_back {
+  padding: 5px;
+  float: left;
+  margin: 2px;
+  border-radius: 3px;
+  margin-left: 5px;
+  border:1px solid #6699FF;
+}
+
+.tags_back:hover, .tags_back a:hover {
+  background: #6699ff;
+  color: #eee;
+  text-decoration: none;
+}
+
+.tags_delete {
+  padding: 5px;
+
+}

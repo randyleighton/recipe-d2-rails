@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
   def index
     @recipe = Recipe.new
     @recipes = Recipe.all
+    @tags = Tag.all
     render("recipes/index.html.erb")
   end
 

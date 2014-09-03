@@ -19,6 +19,17 @@
     </form>
   </div>
 
+  <div class = "row all_list">
+    <h3>Choose a recipe by tag:</h3>
+    <div class = "tag_list">
+      <% @tags.each do |tag| %>
+        <div class = "tags_back">
+          <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
   <div id = "error_box" class = "row">
     <%= render('/layouts/errors', :object => @recipe) %>
   </div>
