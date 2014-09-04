@@ -3,7 +3,6 @@ class TagsController < ApplicationController
   def index
     @tags = Tag.all
     @tag = Tag.new
-    render("tags/index.html.erb")
   end
 
   def create
@@ -11,9 +10,9 @@ class TagsController < ApplicationController
     @tag = Tag.new(params[:tag])
     if @tag.save
       flash[:notice] = "Created Successfully."
-      redirect_to("/tags")
+      redirect_to tags_path
     else
-      render("index.html.erb")
+      render "index"
     end
   end
 
@@ -21,13 +20,11 @@ class TagsController < ApplicationController
     @recipes = Recipe.all
     @tags = Tag.all
     @tag = Tag.find(params[:id])
-    render("tags/show.html.erb")
   end
 
   def edit
     @tags = Tag.all
     @tag = Tag.find(params[:id])
-    render("tags/edit.html.erb")
   end
 
   def update
@@ -35,13 +32,16 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     if @tag.update(params[:tag])
       flash[:notice] = "Updated Successfully."
-      redirect_to("/tags/#{@tag.id}")
+      redirect_to tags_path(@tag)
     else
-      render("tags/edit.html.erb")
+      render "edit"
     end
   end
 
-  def delete
+  def destroy
+    @tag = Tag.find(params[:id])
+    @tag.destroy
+    flash[:notice] = "Removed Successfully."
+    redirect_to tags_path
   end
-
 end

@@ -1,11 +1,10 @@
 <% content_for(:title, "Home | Tags" ) %>
 
-<div class = "container-fluid">
   <h1>Tags</h1>
 
   <%= render("/layouts/tag_list") %>
 
-  <div class = "row">
+  <div class = "all_list">
     <h3>Input a new tag</h3>
     <form action="/tags" method="post">
       <%= render("/layouts/tag_form") %>
@@ -19,4 +18,3 @@
 
   <a href="/recipes/"><button class="btn btn-primary">Recipe Home</button></a>
 
-</div>
