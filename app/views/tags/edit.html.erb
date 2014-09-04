@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row">
+  <div>
     <h2>Tag Detail</h2>
     <% if @tag.name != "" %>
         <p>Tag Name: <%= @tag.name %></p>
@@ -8,17 +8,12 @@
     <% end %>
   </div>
   <br><br>
-  <div class="row">
+  <div>
     <h4>Update tag Details</h4>
-
-    <form action="/tags/<%= @tag.id %>" method="post">
-      <input name="_method" type="hidden" value="patch">
       <%= render('/layouts/tag_form') %>
-      <button class="btn btn-primary">Update</button>
-    </form>
   </div>
 
-  <div id = "error_box" class="row">
+  <div id = "error_box">
     <%= render('/layouts/errors', :object => @tag) %>
   </div>
 

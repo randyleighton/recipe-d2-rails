@@ -5,9 +5,9 @@
     });
   </script>
 
-  <ul>
+  <div class = "alert alert-danger">
     <% object.errors.full_messages.each do |error|%>
-      <li><%= error %> </li>
+      <%= error %>
     <% end %>
-  </ul>
+  </div>
 <% end %>

@@ -1,7 +1,3 @@
-<div id = "error_box">
-  <%= render('/layouts/errors', :object => @tag) %>
-</div>
-
 <div>
   <%= form_for(@tag) do |f| %>
     <%= f.label :name %>
@@ -10,3 +6,6 @@
   <% end %>
 </div>
 
+<div id = "error_box">
+  <%= render('/layouts/errors', :object => @tag) %>
+</div>
