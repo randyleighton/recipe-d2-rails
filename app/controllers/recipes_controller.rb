@@ -46,5 +46,4 @@ class RecipesController < ApplicationController
     flash[:notice] = "Removed Successfully."
     redirect_to recipes_path
   end
-
 end

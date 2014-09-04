@@ -3,7 +3,9 @@
   <div class = "tag_list">
     <% @tags.each do |tag| %>
       <div class = "tags_back">
-        <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+        <%= link_to "#{tag.name}", tag_path(tag) %>
+
+
       </div>
     <% end %>
   </div>
