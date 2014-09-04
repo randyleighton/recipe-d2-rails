@@ -1,7 +1,6 @@
 class Tag < ActiveRecord::Base
 
-  validates :name, presence: true, uniqueness: true
+  belongs_to :recipe
+  belongs_to :ingredient
 
-  has_and_belongs_to_many :recipes
-  default_scope { order(name: :asc) }
 end

@@ -5,7 +5,8 @@ describe Recipe do
   it { should validate_presence_of :name }
   it { should validate_presence_of :description }
   it { should validate_uniqueness_of :name }
-  it { should have_and_belong_to_many :tags }
+  it { should have_many :tags }
+  it { should have_many(:ingredients).through(:tags)}
 
   it "should sort recipes by ascending order" do
     recipe1 = Recipe.create({name: "Fried Rat Burritos",

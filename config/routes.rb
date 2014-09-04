@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :tags
 
-  resources :recipestags
+  resources :ingredients
 
   # match('recipes/:recipe_id/tags', {via: :post, to: 'recipestags#create'})
   # match('recipes/:id/tags/:tag_id', {via: :delete, to: 'recipestags#delete'})
