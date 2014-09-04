@@ -3,19 +3,19 @@
 <div class = "container-fluid">
   <h1>Recipes</h1>
 
-  <div class = "row all_list">
-    <h3>All recipes</h3>
+  <div class = "all_list">
+    <h3>All recipes:</h3>
       <% @recipes.each do |recipe| %>
-        <%= link_to "#{recipe.name}", recipe_path(recipe) %><span class = "glyphicon glyphicon-cutlery"></span>
+        <div class = "each-recipe"><%= link_to "#{recipe.name}", recipe_path(recipe) %><span class = "glyphicon glyphicon-cutlery"></span></div>
       <% end %>
   </div>
 
-  <div class = "row">
+  <div>
     <h3>Input a new recipe</h3>
     <%= render 'form' %>
   </div>
 
-  <div class = "row">
+  <div>
     <%= render("/layouts/tag_list") %>
   </div>
 
