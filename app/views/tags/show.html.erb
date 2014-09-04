@@ -3,28 +3,23 @@
 <div class = "container-fluid">
   <h1><%= @tag.name %></h1>
 
-  <div class = "row">
-    <div class ="col-xs-1">
-      <a href="/tags/<%= @tag.id %>/edit">
-        <span class="glyphicon glyphicon-pencil"></span> Edit
-      </a>
+  <div class = 'row'>
+    <div class ="col-xs-2 col-md-2">
+      <span class= "glyphicon glyphicon-pencil"></span>
+       <%= link_to "Edit Tag", edit_tag_path(@tag) %>
     </div>
 
     <div class ="col-xs-2">
-      <a href="/tags/<%= @tag.id %>" rel="nofollow" data-method="delete" data-confirm="Really, please don't? ">
-        <span class="glyphicon glyphicon-trash"></span> Delete
-      </a>
+      <%= link_to "Delete", tag_path(@tag), :class =>"glyphicon glyphicon-trash", :data => {:confirm => "Are you certain?", :method => "delete"} %>
     </div>
-
   </div>
 
-  <div class="row">
+  <div class>
     <h3>Recipes tagged with this ingredient:</h3>
+
     <% @tag.recipes.each do | recipe | %>
-      <a href='/recipes/<%= recipe.id %>'><span class = "glyphicon glyphicon-cutlery"> </span> <%= recipe.name %></a>
+      <span class = "glyphicon glyphicon-cutlery"></span>
+        <%= link_to "#{recipe.name}", recipe_path(recipe) %>
     <% end %>
   </div>
-  <br>
-
-  <a href="/tags"><button class="btn btn-primary">Tag List</button></a>
 </div>
