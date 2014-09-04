@@ -1,20 +1,13 @@
 <% content_for(:title, "Home | Tags" ) %>
 
+<div class="container-fluid">
   <h1>Tags</h1>
-
   <%= render("/layouts/tag_list") %>
 
   <div class = "all_list">
     <h3>Input a new tag</h3>
-    <form action="/tags" method="post">
-      <%= render("/layouts/tag_form") %>
-      <button class="btn btn-success">Submit</button>
-    </form>
+    <%= render("/layouts/tag_form") %>
   </div>
 
-  <div id = "error_box" class = "row">
-    <%= render('/layouts/errors', :object => @tag) %>
-  </div>
-
-  <a href="/recipes/"><button class="btn btn-primary">Recipe Home</button></a>
+</div>
 

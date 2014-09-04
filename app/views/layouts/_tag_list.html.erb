@@ -1,6 +1,6 @@
 <div class = "all_list">
   <h3>All tags:</h3>
-  <div class = "tags_list clearfix">
+  <div class = "tags_list clearfix center-block">
     <% @tags.each do |tag| %>
       <div class = "tags_back">
         <%= link_to "#{tag.name}", tag_path(tag) %>

@@ -1,2 +1,12 @@
-<label for="tag_name">Tag name </label>
-<input id="tag_name" name="tag[name]" value="<%= @tag.name %>">
+<div id = "error_box">
+  <%= render('/layouts/errors', :object => @tag) %>
+</div>
+
+<div>
+  <%= form_for(@tag) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit(:class => "custom-form-button btn btn-primary") %>
+  <% end %>
+</div>
+
