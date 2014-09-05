@@ -1,17 +1,16 @@
 <% content_for(:title, "Home | Recipes" ) %>
 
 <div class = "container-fluid">
-  <h1>Recipes</h1>
 
   <div class = "all_list">
-    <h3>All recipes:</h3>
+    <h3>View a Recipe:</h3>
       <% @recipes.each do |recipe| %>
         <div class = "each-recipe"><%= link_to "#{recipe.name}", recipe_path(recipe) %><span class = "glyphicon glyphicon-cutlery"></span></div>
       <% end %>
   </div>
 
   <div>
-    <h3>Input a new recipe</h3>
+    <h3>Input a new recipe:</h3>
     <%= render 'form' %>
   </div>
 

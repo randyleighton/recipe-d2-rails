@@ -14,10 +14,15 @@
     <% end %>
   </div>
 
-  <div class "row">
-    <h4>Add Tag</h4>
-
-  </div>
+  <div class="row">
+    <h4>Tag ingredients to this recipe: </h4>
+    <%= form_for(@tag) do |f| %>
+      <div class="form-group">
+        <%= f.hidden_field :recipe_id, :value => @recipe.id %>
+        <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+        <%= f.submit(:class => "recipe-button btn btn-primary")%>
+      </div>
+    <% end %>
 
   <div class = "row">
     <h3>Update a recipe</h3>
