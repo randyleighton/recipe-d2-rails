@@ -1,0 +1,11 @@
+<div>
+  <%= form_for(@ingredient) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit(:class => "custom-form-button btn btn-primary") %>
+  <% end %>
+</div>
+
+<div id = "error_box">
+  <%= render('/layouts/errors', :object => @ingredient) %>
+</div>

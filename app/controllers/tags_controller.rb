@@ -3,9 +3,13 @@ class TagsController < ApplicationController
   def index
     @tags = Tag.all
     @tag = Tag.new
+    @recipes = Recipe.all
+    @ingredients = Ingredient.all
   end
 
   def create
+    @recipes = Recipe.all
+    @ingredients = Ingredient.all
     @tags = Tag.all
     @tag = Tag.new(params[:tag])
     if @tag.save
@@ -17,17 +21,22 @@ class TagsController < ApplicationController
   end
 
   def show
+    @ingredients = Ingredient.all
     @recipes = Recipe.all
     @tags = Tag.all
     @tag = Tag.find(params[:id])
   end
 
   def edit
+    @ingredients = Ingredient.all
+    @recipes = Recipe.all
     @tags = Tag.all
     @tag = Tag.find(params[:id])
   end
 
   def update
+    @ingredients = Ingredient.all
+    @recipes = Recipe.all
     @tags = Tag.all
     @tag = Tag.find(params[:id])
     if @tag.update(params[:tag])

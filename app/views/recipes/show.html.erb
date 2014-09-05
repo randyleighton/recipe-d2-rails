@@ -18,15 +18,15 @@
   </div>
 
   <div class ="row">
-    <h3>Tags</h3>
+    <h3>Ingredients</h3>
     <ul>
-      <% @recipe.tags.each do |tag| %>
-        <li><%= tag.name %><a href="/recipes/<%= @recipe.id %>/tags/<%= tag.id %>"
+      <% @recipe.ingredients.each do |ingredient| %>
+        <li><%= ingredient.name %><a href="/recipes/<%= @recipe.id %>/ingredients/<%= ingredient.id %>"
           rel="nofollow" data-method="delete" data-confirm="Really, please don't? ">
           <span class="glyphicon glyphicon-trash"></span></a></li>
       <% end %>
       <br>
-      <span class="glyphicon glyphicon-trash"></span> = Click to remove a tag
+      <span class="glyphicon glyphicon-trash"></span> = Click to remove a ingredient
     </ul>
   </div>
 </div>

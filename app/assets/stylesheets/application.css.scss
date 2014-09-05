@@ -54,11 +54,11 @@ h3 {
   margin-bottom:3px;
 }
 
-.tags_list {
+.ingredients_list {
   padding-bottom: 20px;
 }
 
-.tags_back {
+.ingredients_back {
   padding: 5px;
   float: left;
   margin: 2px;
@@ -68,13 +68,13 @@ h3 {
   border:1px solid #6699FF;
 }
 
-.tags_back:hover, .tags_back a:hover {
+.ingredients_back:hover, .ingredients_back a:hover {
   background: #6699ff;
   color: #eee;
   text-decoration: none;
 }
 
-.tags_delete {
+.ingredients_delete {
   padding: 5px;
 }
 
@@ -102,7 +102,7 @@ textarea#recipe_description  {
   padding-bottom: 10px;
 }
 
-#tag_name {
+#ingredient_name {
   display: block;
   width: 50%;
   height: 2.5em;

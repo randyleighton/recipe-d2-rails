@@ -1,23 +1,23 @@
-<% content_for(:title, "#{@tag.name} | Tags" ) %>
+<% content_for(:title, "#{@ingredient.name} | Ingredients" ) %>
 
 <div class = "container-fluid">
-  <h1><%= @tag.name %></h1>
+  <h1><%= @ingredient.name %></h1>
 
   <div class = 'row'>
     <div class ="col-xs-2 col-md-2">
       <span class= "glyphicon glyphicon-pencil"></span>
-       <%= link_to "Edit Tag", edit_tag_path(@tag) %>
+       <%= link_to "Edit Ingredient", edit_ingredient_path(@ingredient) %>
     </div>
 
     <div class ="col-xs-2">
-      <%= link_to "Delete", tag_path(@tag), :class =>"glyphicon glyphicon-trash", :data => {:confirm => "Are you certain?", :method => "delete"} %>
+      <%= link_to "Delete", ingredient_path(@ingredient), :class =>"glyphicon glyphicon-trash", :data => {:confirm => "Are you certain?", :method => "delete"} %>
     </div>
   </div>
 
   <div class>
-    <h3>Recipes tagged with this ingredient:</h3>
+    <h3>Recipes with this Ingredient:</h3>
 
-    <% @tag.recipes.each do | recipe | %>
+    <% @ingredient.recipes.each do | recipe | %>
       <span class = "glyphicon glyphicon-cutlery"></span>
         <%= link_to "#{recipe.name}", recipe_path(recipe) %>
     <% end %>

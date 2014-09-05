@@ -1,18 +1,18 @@
 <div class="container-fluid">
   <div>
-    <h2>Tag Detail</h2>
-    <% if @tag.name != "" %>
-        <p>Tag Name: <%= @tag.name %></p>
+    <h2>Ingredient Detail</h2>
+    <% if @ingredient.name != "" %>
+        <p>Ingredient Name: <%= @ingredient.name %></p>
     <% else %>
-        <p>Tag Name: Invalid entry.</p>
+        <p>Ingredient Name: Invalid entry.</p>
     <% end %>
   </div>
 
   <br><br>
 
   <div>
-    <h4>Update tag Details</h4>
-      <%= render('/layouts/tag_form') %>
+    <h4>Update ingredient Details</h4>
+      <%= render('/layouts/ingredient_form') %>
   </div>
 
 </div>

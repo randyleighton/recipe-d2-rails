@@ -7,8 +7,8 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredients = Ingredient.all
-    @ingredient = Ingredient.new(params[:tag])
-    if @tag.save
+    @ingredient = Ingredient.new(params[:ingredient])
+    if @ingredient.save
       flash[:notice] = "Created Successfully."
       redirect_to ingredients_path
     else
@@ -30,9 +30,9 @@ class IngredientsController < ApplicationController
   def update
     @ingredients = Ingredient.all
     @ingredient = Ingredient.find(params[:id])
-    if @tag.update(params[:tag])
+    if @ingredient.update(params[:ingredient])
       flash[:notice] = "Updated Successfully."
-      redirect_to tags_path(@tag)
+      redirect_to ingredients_path(@ingredient)
     else
       render "edit"
     end
@@ -44,7 +44,4 @@ class IngredientsController < ApplicationController
     flash[:notice] = "Removed Successfully."
     redirect_to ingredients_path
   end
-end
-
-
 end

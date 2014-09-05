@@ -4,9 +4,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipes = Recipe.all
     @tags = Tag.all
+    @ingredients = Ingredient.all
   end
 
   def create
+    @ingredients = Ingredient.all
     @recipes = Recipe.all
     @recipe = Recipe.new(params[:recipe])
     if @recipe.save
@@ -18,18 +20,21 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @ingredients = Ingredient.all
     @recipes = Recipe.all
     @tags = Tag.all
     @recipe = Recipe.find(params[:id])
   end
 
   def edit
+    @ingredients = Ingredient.all
     @recipes = Recipe.all
     @tags = Tag.all
     @recipe = Recipe.find(params[:id])
   end
 
   def update
+    @ingredients = Ingredient.all
     @recipes = Recipe.all
     @recipe = Recipe.find(params[:id])
     if @recipe.update(params[:recipe])
