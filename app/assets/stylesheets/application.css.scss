@@ -17,6 +17,7 @@
 @import "bootstrap";
 
 
+
 .footer {
   background-color: rgb(248, 248, 248);
   margin-top: 2em;
@@ -25,13 +26,15 @@
 
 }
 
-p {
-  font-size: 16px;
+* {
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif, Helvetica, Arial, sans-serif;
 }
 
 h3 {
-  font-size:1.4em;
+  font-size:1.8em;
   padding-bottom:.5em;
+  font-family: 'Lobster Two', cursive;
 }
 
 #error_box {
@@ -43,10 +46,19 @@ h3 {
 }
 
 .each-recipe {
-  border: 1px solid #aaa;
-  border-radius: 3px;
-  background: #eee;
-  padding-left: 0;
+  border-top: 1px solid #ccc;
+  padding: 7px;
+  font-size: 1.3em;
+}
+
+.each-recipe a{
+  color: #333;
+}
+
+.each-recipe:hover, a:hover {
+  background: #ccc;
+  color: #f3f3f3;
+  text-decoration: none;
 }
 
 
@@ -54,23 +66,39 @@ h3 {
   margin-bottom:3px;
 }
 
+.inverse {
+  background:#aaa;
+  color: white;
+  height:100%;
+  display: block;
+}
+
 .ingredients_list {
   padding-bottom: 20px;
 }
 
 .ingredients_back {
-  padding: 5px;
   float: left;
+  height: 33.3333320617676px;
   margin: 2px;
-  background: white;
+  background:rgb(248, 248, 248);
   border-radius: 3px;
-  margin-left: 5px;
-  border:1px solid #6699FF;
+  padding-left: 5px;
+  border:1px solid #ccc;
 }
 
-.ingredients_back:hover, .ingredients_back a:hover {
-  background: #6699ff;
-  color: #eee;
+.ingredients_back_index {
+  float: left;
+  height: 33.3333320617676px;
+  margin: 2px;
+  background:rgb(248, 248, 248);
+  border-radius: 3px;
+  padding: 5px;
+  border:1px solid #ccc;
+}
+
+.glyph-div :hover {
+  color: #555;
   text-decoration: none;
 }
 
@@ -78,10 +106,29 @@ h3 {
   padding: 5px;
 }
 
+.glyph-div {
+  display: inline-block;
+  height:100%;
+  padding: 5px 7px 5px 0;
+  background: white;
+  -webkit-border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-left:1px solid #ccc;
+}
+
 .glyphicon {
-  color: green;
-  margin-right: 2px;
-  margin-left: 10px;
+  color: #428bca;
+  margin-right: 3px;
+  margin-left: 7px;
+}
+
+.big-glyph {
+  font-size: 1.4em;
+
 }
 
 .new_recipe {
@@ -112,3 +159,16 @@ textarea#recipe_description  {
   margin-top: 1.1em;
 }
 
+#tag_ingredient_id, .form-select {
+  height: 33.3333320617676px;
+}
+
+
+.top-buffer-small {
+  margin-top:15px;
+}
+
+
+.top-buffer-large {
+  margin-top:30px;
+}

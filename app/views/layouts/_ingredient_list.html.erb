@@ -1,10 +1,10 @@
-<div class = "all_list">
+
+
+<div class = "col-xs-12 ingredients_list clearfix center-block top-buffer-small">
   <h3>Choose an ingredient to view all its recipes:</h3>
-  <div class = "ingredients_list clearfix center-block">
-    <% @ingredients.each do |ingredient| %>
-      <div class = "ingredients_back">
-        <%= link_to "#{ingredient.name}", ingredient_path(ingredient) %>
-      </div>
-    <% end %>
-  </div>
+  <% @ingredients.each do |ingredient| %>
+    <div class = "ingredients_back_index">
+      <%= link_to "#{ingredient.name}", ingredient_path(ingredient) %>
+    </div>
+  <% end %>
 </div>

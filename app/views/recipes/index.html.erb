@@ -5,7 +5,7 @@
   <div class = "all_list">
     <h3>View a Recipe:</h3>
       <% @recipes.each do |recipe| %>
-        <div class = "each-recipe"><%= link_to "#{recipe.name}", recipe_path(recipe) %><span class = "glyphicon glyphicon-cutlery"></span></div>
+        <div class = "each-recipe"><%= link_to "#{recipe.name}", recipe_path(recipe) %></div>
       <% end %>
   </div>
 

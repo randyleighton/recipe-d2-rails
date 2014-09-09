@@ -1,44 +1,53 @@
 <% content_for(:title, "#{@recipe.name} | Recipes" ) %>
 
-<div class = "container-fluid">
-  <h1><%= @recipe.name %></h1>
-
-
-  <div class = "row">
-    <h3>Recipe Directions</h3>
-    <p><%= @recipe.description %></p>
-  </div>
-  <div class = "row">
-    <div class ="col-xs-2">
-      <p><%= link_to "Edit Recipe", edit_recipe_path(@recipe), :class =>"glyphicon glyphicon-pencil" %></p>
-    </div>
-    <div class ="col-xs-3">
-      <p><%= link_to "Delete", recipe_path(@recipe), :class => "glyphicon glyphicon-trash", :data => {:confirm => "Are you certain?", :method => "delete"} %></p>
-    </div>
-  </div>
-
-  <div class ="row">
-    <h3>Ingredients</h3>
-    <ul>
-      <% @recipe.ingredients.each do |ingredient| %>
-        <li><%= ingredient.name %><a href="/recipes/<%= @recipe.id %>/ingredients/<%= ingredient.id %>"
-          rel="nofollow" data-method="delete" data-confirm="Really, please don't? ">
-          <span class="glyphicon glyphicon-trash"></span></a></li>
-      <% end %>
-      <br>
-      <span class="glyphicon glyphicon-trash"></span> = Click to remove a ingredient
-    </ul>
-  </div>
-
+<div class = "container">
   <div class="row">
-  <h4>Add an ingredient to this recipe: </h4>
-  <%= form_for(@tag) do |f| %>
-    <div class="form-group">
-      <%= f.hidden_field :recipe_id, :value => @recipe.id %>
-      <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
-      <%= f.submit(:class => "recipe-button btn btn-primary")%>
-    </div>
-  <% end %>
+    <div class="col-xs-12 inverse">
+      <div class = "col-sm-10">
+        <h1><%= @recipe.name %></h1>
+      </div>
 
+      <div class = "col-sm-1 big-glyph">
+
+        <%= link_to image_tag("edit.png", :class=>"image_link"), edit_recipe_path(@recipe)%>
+        <p>Edit</p>
+      </div>
+      <div class = "col-sm-1 big-glyph">
+        <%= link_to image_tag("delete.png", :class=>"image_link"), recipe_path(@recipe), :data => {:confirm => "Are you certain?", :method => "delete"} %>
+        <p>Delete</p>
+      </div>
+    </div>
+
+    <div class="col-xs-12">
+      <h3>Recipe Directions</h3>
+      <p><%= @recipe.description %></p>
+    </div>
+
+    <div class="col-xs-12 ingredients_list clearfix center-block top-buffer-small">
+      <h3>Ingredients</h3>
+      <% @recipe.ingredients.each do |ingredient| %>
+        <div class = "ingredients_back"><%= ingredient.name %>
+          <a href="/recipes/<%= @recipe.id %>/ingredients/<%= ingredient.id %>"
+          rel="nofollow" data-method="delete" data-confirm="Really, please don't? ">
+          <div class='glyph-div'>
+            <span class="glyphicon glyphicon-trash"></span></a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-xs-12">
+      <span class="glyphicon glyphicon-trash"></span> = Click to remove a ingredient
+    </div>
+    <div class="col-xs-12 top-buffer-large">
+      <h4>Add an ingredient to this recipe: </h4>
+      <%= form_for(@tag) do |f| %>
+        <div class="form-group">
+          <%= f.hidden_field :recipe_id, :value => @recipe.id %>
+          <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name, :class=>'form-select' %>
+          <%= f.submit(:class => "btn btn-primary")%>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
+
