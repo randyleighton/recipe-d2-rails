@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
     @tags = Tag.all
     @recipe = Recipe.find(params[:id])
+    @tag = @recipe.tags.new
   end
 
   def edit

@@ -14,7 +14,7 @@ class TagsController < ApplicationController
     @tag = Tag.new(params[:tag])
     if @tag.save
       flash[:notice] = "Created Successfully."
-      redirect_to tags_path
+      redirect_to recipe_path(@tag.recipe)
     else
       render "index"
     end

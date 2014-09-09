@@ -29,4 +29,16 @@
       <span class="glyphicon glyphicon-trash"></span> = Click to remove a ingredient
     </ul>
   </div>
+
+  <div class="row">
+  <h4>Add an ingredient to this recipe: </h4>
+  <%= form_for(@tag) do |f| %>
+    <div class="form-group">
+      <%= f.hidden_field :recipe_id, :value => @recipe.id %>
+      <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+      <%= f.submit(:class => "recipe-button btn btn-primary")%>
+    </div>
+  <% end %>
+
+  </div>
 </div>
